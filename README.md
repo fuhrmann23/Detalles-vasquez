@@ -1,1 +1,1 @@
-Detallez vasquez
+Detalles vasquez

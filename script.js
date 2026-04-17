@@ -19,78 +19,44 @@
    Ej: img/producto1.jpg, img/caja-sorpresa.jpg, etc.
    ============================================================ */
 
-const productos = [
-  {
-    nombre:      "Caja Sorpresa Premium",
-    descripcion: "Caja de regalo personalizada con cintas, papel de seda y tarjeta manuscrita. Perfecta para cualquier ocasión especial.",
-    imagen:      "img/producto1.jpg",
-    categoria:   "Cajas de Regalo",
-  },
-  {
-    nombre:      "Kit de Papelería",
-    descripcion: "Set personalizado de libretas, marcadores y tarjetas decoradas con tu nombre o mensaje preferido.",
-    imagen:      "img/producto2.jpg",
-    categoria:   "Papelería",
-  },
-  {
-    nombre:      "Souvenir Artesanal",
-    descripcion: "Recuerdo único hecho a mano, ideal para bodas, baby showers, cumpleaños o cualquier evento memorable.",
-    imagen:      "img/producto3.jpg",
-    categoria:   "Souvenirs",
-  },
-  {
-    nombre:      "Set de Velas Aromáticas",
-    descripcion: "Velas artesanales con aromas naturales, presentadas en envase decorado listo para regalar.",
-    imagen:      "img/producto4.jpg",
-    categoria:   "Regalo",
-  },
-  {
-    nombre:      "Packaging Personalizado",
-    descripcion: "Soluciones de empaque para marcas y emprendedores: bolsas, cajas y etiquetas con tu diseño.",
-    imagen:      "img/producto5.jpg",
-    categoria:   "Packaging",
-  },
-  {
-    nombre:      "Caja Baby Shower",
-    descripcion: "Caja temática con productos seleccionados para los futuros papás. Personalizable al 100%.",
-    imagen:      "img/producto6.jpg",
-    categoria:   "Baby Shower",
-  },
-  {
-    nombre:      "Tarjetas Personalizadas",
-    descripcion: "Tarjetas de papel premium con diseño exclusivo. Tu mensaje impreso o manuscrito, como más te guste.",
-    imagen:      "img/producto7.jpg",
-    categoria:   "Papelería",
-  },
-  {
-    nombre:      "Box Cumpleaños",
-    descripcion: "Todo en una caja: globos mini, confetti, dulces y un detalle personalizado para la persona especial.",
-    imagen:      "img/producto8.jpg",
-    categoria:   "Cajas de Regalo",
-  },
-];
 
-/* ============================================================
-   RENDERIZADO DE PRODUCTOS
-   ============================================================ */
-
-/**
- * Renderiza las tarjetas de producto en el grid.
- * Muestra un placeholder si la imagen no se encuentra,
- * o la imagen real si existe en la ruta indicada.
- */
-function renderProductos() {
+async function renderProductos() {
   const grid = document.getElementById("productosGrid");
   if (!grid) return;
 
-  grid.innerHTML = ""; // Limpiar contenido previo
+  grid.innerHTML = "";
 
-  productos.forEach((producto, index) => {
-    const card = document.createElement("div");
-    card.classList.add("product-card");
-    card.setAttribute("role", "button");
-    card.setAttribute("tabindex", "0");
-    card.setAttribute("aria-label", `Ver detalles de ${producto.nombre}`);
+  try {
+    const res = await fetch("/productos/productos.json");
+    const data = await res.json();
+
+    data.items.forEach((producto, index) => {
+      const card = document.createElement("div");
+      card.classList.add("product-card");
+
+      card.innerHTML = `
+        <div class="product-card__img-wrap">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__nombre">${producto.nombre}</h3>
+          <p class="product-card__desc">${producto.descripcion}</p>
+          <p class="product-card__precio">${producto.precio || ""}</p>
+          ${
+            producto.estado === "Agotado"
+              ? `<p style="color:red;font-size:12px;">AGOTADO</p>`
+              : ""
+          }
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("Error cargando productos:", err);
+  }
+}`);
 
     /* Construir contenido de imagen:
        Si la ruta existe, se usa la <img>.

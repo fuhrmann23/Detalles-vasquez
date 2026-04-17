@@ -1,12 +1,17 @@
 collections:
   - name: "productos"
     label: "Productos"
-    folder: "productos"
-    create: true
-    format: "json"
-    extension: "json"
-    fields:
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Descripción", name: "descripcion", widget: "text" }
-      - { label: "Precio", name: "precio", widget: "string" }
-      - { label: "Imagen", name: "imagen", widget: "image" }
+    files:
+      - label: "Lista de productos"
+        name: "lista"
+        file: "productos/productos.json"
+        fields:
+          - label: "Productos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - { label: "Precio", name: "precio", widget: "string" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Estado", name: "estado", widget: "select", options: ["Disponible", "Agotado"] }

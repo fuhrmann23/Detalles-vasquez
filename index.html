@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalles Vásquez · Regalos Personalizados</title>
+  <meta name="description" content="Detalles Vásquez – Souvenirs personalizados, cajas de regalo, papelería y packaging artesanal con amor." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =============================================
+       SIDEBAR NAVIGATION (Desktop)
+       ============================================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+    <div class="sidebar__logo">
+      <!-- 
+        LOGO: Coloca tu imagen de logo en img/logo.png
+        Reemplaza el texto dentro del .logo-placeholder con tu <img> tag:
+        <img src="img/logo.png" alt="Detalles Vásquez" />
+      -->
+      <div class="logo-placeholder">
+        <span class="logo-icon">✦</span>
+      </div>
+      <p class="sidebar__brand">Detalles<br><em>Vásquez</em></p>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#inicio"    class="nav-link active" data-section="inicio">Inicio</a>
+      <a href="#productos" class="nav-link"         data-section="productos">Productos</a>
+      <a href="#quien-soy" class="nav-link"         data-section="quien-soy">Quién Soy</a>
+      <a href="#contacto"  class="nav-link"         data-section="contacto">Contacto</a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="ig-pill" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        @detallesvasquez
+      </a>
+    </div>
+  </aside>
+
+  <!-- =============================================
+       MOBILE HEADER & HAMBURGER MENU
+       ============================================= -->
+  <header class="mobile-header" aria-label="Encabezado móvil">
+    <div class="mobile-header__brand">
+      <span class="logo-icon">✦</span>
+      <span>Detalles <em>Vásquez</em></span>
+    </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <nav>
+      <a href="#inicio"    class="nav-link" data-section="inicio">Inicio</a>
+      <a href="#productos" class="nav-link" data-section="productos">Productos</a>
+      <a href="#quien-soy" class="nav-link" data-section="quien-soy">Quién Soy</a>
+      <a href="#contacto"  class="nav-link" data-section="contacto">Contacto</a>
+    </nav>
+  </div>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- =============================================
+       MAIN CONTENT
+       ============================================= -->
+  <main class="main-content" id="mainContent">
+
+    <!-- ── HERO ── -->
+    <section class="section hero" id="inicio">
+      <div class="hero__bg-deco" aria-hidden="true">
+        <div class="deco-circle deco-circle--1"></div>
+        <div class="deco-circle deco-circle--2"></div>
+        <div class="deco-circle deco-circle--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__tag animate-in">Regalos · Personalizados · Artesanales</div>
+
+        <h1 class="hero__title animate-in animate-in--delay-1">
+          Cada detalle<br>
+          <em>cuenta una historia</em>
+        </h1>
+
+        <p class="hero__subtitle animate-in animate-in--delay-2">
+          Creaciones hechas con amor para que cada regalo sea único, especial y completamente tuyo.
+        </p>
+
+        <div class="hero__info-grid animate-in animate-in--delay-3">
+          <div class="info-card">
+            <span class="info-card__icon">✦</span>
+            <h3>Quién soy</h3>
+            <p>Soy Valentina, emprendedora apasionada por el diseño y los detalles que hacen especial cada momento.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-card__icon">◈</span>
+            <h3>Qué hago</h3>
+            <p>Diseño y elaboro souvenirs, cajas de regalo, papelería personalizada y soluciones de packaging únicas.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-card__icon">◇</span>
+            <h3>Cómo trabajo</h3>
+            <p>Escucho tu idea, la transformo en un concepto visual y la materializo con materiales cuidadosamente elegidos.</p>
+          </div>
+        </div>
+
+        <div class="hero__cta animate-in animate-in--delay-4">
+          <a href="#productos" class="btn btn--primary">Ver Productos</a>
+          <a href="#contacto"  class="btn btn--ghost">Contactar</a>
+        </div>
+      </div>
+
+      <div class="hero__image-area animate-in animate-in--delay-2" aria-hidden="true">
+        <!--
+          IMAGEN HERO: Coloca tu imagen principal en img/hero.jpg
+          Descomenta la siguiente línea y elimina el .hero-placeholder:
+          <img src="img/hero.jpg" alt="Productos Detalles Vásquez" class="hero__img" />
+        -->
+        <div class="hero-placeholder">
+          <span class="hero-placeholder__icon">🎁</span>
+          <p>img/hero.jpg</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PRODUCTOS ── -->
+    <section class="section productos" id="productos">
+      <div class="section__header">
+        <span class="section__label">Catálogo</span>
+        <h2 class="section__title">Nuestros <em>Productos</em></h2>
+        <p class="section__desc">Cada pieza es diseñada y elaborada con dedicación. Haz clic en cualquier producto para consultar disponibilidad.</p>
+      </div>
+
+      <!-- 
+        GALERÍA DE PRODUCTOS
+        Los productos se generan automáticamente desde el array 'productos' en script.js.
+        Para agregar o editar productos, solo modifica ese archivo.
+      -->
+      <div class="productos__grid" id="productosGrid">
+        <!-- Los productos se insertan dinámicamente desde script.js -->
+      </div>
+    </section>
+
+    <!-- ── QUIÉN SOY ── -->
+    <section class="section quien-soy" id="quien-soy">
+      <div class="quien-soy__inner">
+        <div class="quien-soy__image-area">
+          <!--
+            FOTO PERSONAL: Coloca tu foto en img/sobre-mi.jpg
+            Descomenta la siguiente línea:
+            <img src="img/sobre-mi.jpg" alt="Valentina Vásquez" class="quien-soy__img" />
+          -->
+          <div class="sobre-mi-placeholder">
+            <span>📸</span>
+            <p>img/sobre-mi.jpg</p>
+          </div>
+          <div class="sobre-mi-deco" aria-hidden="true"></div>
+        </div>
+
+        <div class="quien-soy__text">
+          <span class="section__label">Mi historia</span>
+          <h2 class="section__title">Quién <em>Soy</em></h2>
+
+          <p>Hola, soy <strong>Valentina Vásquez</strong>, creadora de Detalles Vásquez. Todo comenzó con una pasión por los regalos hechos a mano y la convicción de que cada persona merece recibir algo único, pensado especialmente para ella.</p>
+
+          <p>Empecé en mi cuarto, con tijeras, papel y muchas ganas de hacer feliz a quienes me rodeaban. Hoy, cada pedido sigue naciendo de ese mismo lugar: el corazón.</p>
+
+          <div class="filosofia-grid">
+            <div class="filosofia-item">
+              <span class="filosofia-item__num">01</span>
+              <div>
+                <h4>Filosofía de trabajo</h4>
+                <p>Creo en la artesanía como forma de amor. Cada producto pasa por mis manos con atención plena a los detalles.</p>
+              </div>
+            </div>
+            <div class="filosofia-item">
+              <span class="filosofia-item__num">02</span>
+              <div>
+                <h4>Identidad de marca</h4>
+                <p>Estética, calidez y personalización son los pilares de Detalles Vásquez. No hacemos productos en serie; hacemos momentos.</p>
+              </div>
+            </div>
+            <div class="filosofia-item">
+              <span class="filosofia-item__num">03</span>
+              <div>
+                <h4>Mi compromiso</h4>
+                <p>Trabajar contigo hasta que el resultado supere tus expectativas. Tu satisfacción es mi mayor logro.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACTO ── -->
+    <section class="section contacto" id="contacto">
+      <div class="section__header">
+        <span class="section__label">Hablemos</span>
+        <h2 class="section__title">¿Tienes una <em>idea</em>?</h2>
+        <p class="section__desc">Escríbeme por Instagram o WhatsApp y hagamos realidad ese regalo especial que tienes en mente.</p>
+      </div>
+
+      <div class="contacto__inner">
+        <!-- Botones de contacto -->
+        <div class="contacto__buttons">
+          <!-- INSTAGRAM: Reemplaza la URL con tu perfil real -->
+          <a href="https://www.instagram.com/detallesvasquez" target="_blank" rel="noopener" class="contact-btn contact-btn--ig">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+            Escribir en Instagram
+          </a>
+
+          <!-- WHATSAPP: Reemplaza el número con el tuyo (código de país incluido) -->
+          <a href="https://wa.me/5491112345678?text=Hola%20Valentina!%20Me%20interesa%20un%20producto%20de%20Detalles%20V%C3%A1squez." target="_blank" rel="noopener" class="contact-btn contact-btn--wa">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+
+        <!-- Formulario de contacto opcional -->
+        <div class="contacto__form-wrap">
+          <h3>O déjame tu consulta aquí</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mensaje">¿Qué tenés en mente?</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contame tu idea para el regalo perfecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar consulta</button>
+            <p class="form-note">💌 Te responderé lo antes posible por email o Instagram.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="logo-icon">✦</span>
+          <span>Detalles <em>Vásquez</em></span>
+        </div>
+        <p class="site-footer__copy">© <span id="currentYear"></span> Detalles Vásquez · Hecho con 💛 · Todos los derechos reservados</p>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="ig-pill ig-pill--footer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          @detallesvasquez
+        </a>
+      </div>
+    </footer>
+
+  </main><!-- /main-content -->
+
+  <!-- Modal para producto -->
+  <div class="modal-overlay" id="modalOverlay" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div class="modal__img-wrap" id="modalImgWrap"></div>
+      <div class="modal__body">
+        <h3 class="modal__title" id="modalTitle"></h3>
+        <p class="modal__desc" id="modalDesc"></p>
+        <a href="#contacto" class="btn btn--primary modal__cta" id="modalCta">Consultar precio</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
